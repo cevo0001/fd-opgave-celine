@@ -4,7 +4,7 @@ import servicesData from "@data/services.json";
 console.log(servicesData);
 ---
 
-<ul>
+<ul class="services-list">
   {
     servicesData.services.map((service) => (
       <li>
@@ -18,7 +18,50 @@ console.log(servicesData);
 
 <style>
   @layer components {
-    li {
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      z-index: 100;
+      color: white;
+      max-width: 900px;
+      margin: -110px auto 0 auto; /* overlap hero */
+      padding: 0 2rem;
+      list-style: none;
+    }
+
+    .services-list li {
+      background-color: rgb(40, 40, 40);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+      min-width: 210px;
+    }
+
+    .services-list li:hover {
+      transform: translateY(-10px);
+    }
+
+    .services-list li h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .services-list li p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .services-list li a {
+      text-decoration: none;
+      color: white;
+      background-color: #000000;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
     }
   }
 </style>

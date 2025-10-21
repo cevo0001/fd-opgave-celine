@@ -1,0 +1,43 @@
+/* Globale styles her */
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo til venstre, login til højre */
+  padding: 1rem 2rem;
+  background-color: #000000; /* eller pink/lys farve hvis girly vibe */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .logo h1 {
+  font-size: 1.5rem;
+  color: #ffffff; /* cute pink vibe <3 */
+}
+
+.header .menu a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header .menu a:hover {
+  color: #ffec42;
+}
+
+.header .login button {
+  padding: 0.5rem 1rem;
+  background-color: #ffea4e;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header .login button:hover {
+  background-color: #565656;
+  color: rgb(0, 0, 0);
+}
