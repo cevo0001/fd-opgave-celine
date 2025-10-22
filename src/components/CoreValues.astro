@@ -1,12 +1,13 @@
 ---
 import LayersIcon from "../icons/layers.svg";
-import BarsIcon from "@icons/bars.svg";
-import GlobeIcon from "@icons/globe.svg";
-import GearIcon from "@icons/gear.svg";
+import BarsIcon from "../icons/bars.svg";
+import GlobeIcon from "../icons/globe.svg";
+import GearIcon from "../icons/gear.svg";
 ---
 
 <section class="core-values">
   <div class="cv-inner">
+    <!-- Øverste del -->
     <div class="cv-top">
       <div class="cv-text">
         <p class="cv-sub">Growing with our clients</p>
@@ -20,46 +21,47 @@ import GearIcon from "@icons/gear.svg";
       <button class="cv-btn">Get in touch</button>
     </div>
 
+    <!-- Kort grid -->
     <div class="cv-grid">
       <div class="cv-card">
-        <img src={LayersIcon.src} alt="Creative Ideas icon" />
+        <div class="cv-icon"><LayersIcon /></div>
         <h3>Creative Ideas</h3>
         <p>
           Explore innovative strategies tailored to your goals. Unlock unique
           solutions that inspire growth and creativity. Drive impactful change.
         </p>
-        <a href="#">Read More </a>
+        <a href="#">Read More</a>
       </div>
 
       <div class="cv-card">
-        <img src={BarsIcon.src} alt="Best Features icon" />
+        <div class="cv-icon"><BarsIcon /></div>
         <h3>Best Features</h3>
         <p>
           Deliver advanced tools designed for seamless integration. Optimize
           workflows with cutting-edge technology.
         </p>
-        <a href="#">Read More </a>
+        <a href="#">Read More</a>
       </div>
 
       <div class="cv-card">
-        <img src={GlobeIcon.src} alt="Experience icon" />
+        <div class="cv-icon"><GlobeIcon /></div>
         <h3>Experience</h3>
         <p>
           Leverage years of proven expertise across diverse industries. Empower
           your business with our skilled professionals. Achieve sustainable
           success.
         </p>
-        <a href="#">Read More </a>
+        <a href="#">Read More</a>
       </div>
 
       <div class="cv-card">
-        <img src={GearIcon.src} alt="Easy Solutions icon" />
+        <div class="cv-icon"><GearIcon /></div>
         <h3>Easy Solutions</h3>
         <p>
           Streamline your challenges with simple, effective solutions. Ensure
           hassle-free implementation for measurable results.
         </p>
-        <a href="#">Read More </a>
+        <a href="#">Read More</a>
       </div>
     </div>
   </div>
@@ -81,7 +83,7 @@ import GearIcon from "@icons/gear.svg";
       gap: 3rem;
     }
 
-    /* Header-tekst og knap */
+    /* Øverste tekst og knap */
     .cv-top {
       display: flex;
       justify-content: space-between;
@@ -129,7 +131,7 @@ import GearIcon from "@icons/gear.svg";
       background: #ffcc00;
     }
 
-    /* Grid setup med subgrid-look */
+    /* Grid med kort */
     .cv-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -152,11 +154,33 @@ import GearIcon from "@icons/gear.svg";
       transform: translateY(-4px);
     }
 
-    .cv-card img {
+    /* Ikoner */
+    .cv-icon {
       border-radius: 50%;
       padding: 0.6rem;
       width: 40px;
       height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cv-icon {
+      background-color: #fff; /* cirklen er hvid */
+      border-radius: 50%;
+      padding: 0.6rem;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 2px #000; /* sort ring rundt om */
+    }
+
+    .cv-icon svg {
+      width: 20px;
+      height: 20px;
+      z-index: 10;
     }
 
     .cv-card h3 {
@@ -176,7 +200,7 @@ import GearIcon from "@icons/gear.svg";
       font-weight: 600;
       color: #000;
       text-decoration: none;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.3rem;
     }
