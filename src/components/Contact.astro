@@ -170,15 +170,15 @@ import ImgBottom from "../assets/images/contactbottom.svg";
       position: relative;
     }
 
-    .img-main Image {
+    .img-main img {
       border-radius: 12px;
     }
 
     .green-shape {
       position: absolute;
       bottom: 0;
-      left: -1rem;
-      width: 80%;
+      left: -1.5rem;
+      width: 90%;
       height: 25%;
       background-color: #4caf50;
       border-radius: 0.75rem;
@@ -208,14 +208,18 @@ import ImgBottom from "../assets/images/contactbottom.svg";
     }
 
     /* prikmønster bag billede */
+    .img-top img {
+      position: relative;
+      z-index: 2; /* løfter billedet over prikkerne */
+    }
     .dots {
       position: absolute;
-      top: -12px;
+      top: -25px;
       right: -20px;
-      width: 100px;
-      height: 100px;
-      background-image: radial-gradient(#b39446 1px, transparent 1px);
-      background-size: 10px 10px;
+      width: 200px;
+      height: 250px;
+      background-image: radial-gradient(#b39446 2px, transparent 1px);
+      background-size: 15px 17px;
       z-index: 0;
     }
 
