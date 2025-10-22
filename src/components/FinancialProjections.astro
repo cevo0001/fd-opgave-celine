@@ -1,128 +1,254 @@
 ---
 import ArrowLeft from "../icons/arrow-left.svg";
 import ArrowRight from "../icons/arrow--right.svg";
+import Card1 from "../icons/cal.svg";
+import Card2 from "../icons/card.svg";
+import Card3 from "../icons/law.svg";
+import Card4 from "../icons/money.svg";
+
+const cards = [
+  {
+    icon: Card1,
+    title: "The Balance Sheet",
+    text: "The Balance Sheet is a summary of the assets and liabilities and equity of a business at a specific point of time.",
+  },
+  {
+    icon: Card2,
+    title: "Income Statement",
+    text: "The Income (Profit and Loss) Statement summarizes the revenue and expenses for a specific time period (one month, one quarter, one year, etc.).",
+  },
+  {
+    icon: Card3,
+    title: "Financial Plan",
+    text: "Keep your information current and review the documents regularly to ensure alignment with key individuals within your company.",
+  },
+  {
+    icon: Card4,
+    title: "Financial Ratios",
+    text: "Ratios are useful when comparing your company with the competition or benchmarking your performance over time.",
+  },
+];
 ---
 
-<section class="projections">
+<section class="projections" data-proj="root">
   <div class="section-inner">
-    <div class="proj-inner">
-      <h2>Financial Projections</h2>
-      <p>
-        Financial projections are essential for planning and monitoring a
-        company's performance. They provide insights into potential revenue,
-        expenses, and profitability over specific periods.
-      </p>
+    <div class="proj-header">
+      <div class="proj-text">
+        <h2>Financial Projections</h2>
+        <p>
+          Financial projections are essential for planning and monitoring a
+          company's performance. They provide insights into potential revenue,
+          expenses, and profitability over specific periods.
+        </p>
+      </div>
 
       <div class="proj-controls">
-        <button class="proj-btn">
+        <button class="proj-btn black" id="prevBtn">
           <img src={ArrowLeft.src} alt="Previous" />
         </button>
-        <button class="proj-btn active">
+        <button class="proj-btn yellow" id="nextBtn">
           <img src={ArrowRight.src} alt="Next" />
         </button>
       </div>
-
-      <ul class="proj-cards">
-        <li class="proj-card">
-          <h3>The Balance Sheet</h3>
-          <p>
-            The Balance Sheet is a summary of the assets and liabilities of a
-            business at a specific point in time.
-          </p>
-        </li>
-        <li class="proj-card active">
-          <h3>Income Statement</h3>
-          <p>
-            The Income Statement includes revenue, expenses, and net profit over
-            a specific period.
-          </p>
-        </li>
-        <li class="proj-card">
-          <h3>Financial Plan</h3>
-          <p>
-            Review long-term objectives and track progress for steady growth and
-            stability.
-          </p>
-        </li>
-        <li class="proj-card">
-          <h3>Financial Ratios</h3>
-          <p>
-            Analyze and evaluate your company’s performance and financial
-            efficiency.
-          </p>
-        </li>
-      </ul>
     </div>
+
+    <ul class="proj-cards" id="projCards">
+      {
+        cards.map((card) => (
+          <li class="proj-card">
+            <div class="proj-icon">
+              <img src={card.icon.src} alt={card.title} />
+            </div>
+            <h3>{card.title}</h3>
+            <p>{card.text}</p>
+          </li>
+        ))
+      }
+    </ul>
   </div>
+  <script>
+    (() => {
+      const root = document.querySelector('[data-proj="root"]');
+      if (!root) return;
+
+      const cards = root.querySelectorAll(".proj-card");
+      const nextBtn = root.querySelector("#nextBtn");
+      const prevBtn = root.querySelector("#prevBtn");
+      if (!cards.length || !nextBtn || !prevBtn) return;
+
+      let activeIndex = 1; // starter på kort nr. 2
+
+      function updateCards() {
+        cards.forEach((card, i) => {
+          card.classList.toggle("active", i === activeIndex);
+        });
+      }
+
+      nextBtn.addEventListener("click", () => {
+        activeIndex = (activeIndex + 1) % cards.length;
+        updateCards();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+        updateCards();
+      });
+
+      updateCards();
+    })();
+  </script>
 </section>
 
 <style>
   @layer components {
+    :root {
+      --clr-bg: #f7f7f8;
+      --clr-card: #eeeeee;
+      --clr-active: #000000;
+      --clr-accent: #ffcc33;
+      --clr-text: #222;
+      --radius: 1rem;
+      --transition: 0.3s ease;
+    }
+
     .projections {
-      background-color: #f8f9fa;
-      padding: 6rem 2rem;
+      background: var(--clr-bg);
+      padding: 6rem 2rem 8rem 2rem;
     }
 
-    .proj-inner {
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
       max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
+      margin: 0 auto 3rem auto;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
 
-    .proj-inner h2 {
+    .proj-text {
+      text-align: left;
+      max-width: 650px;
+    }
+
+    .proj-text h2 {
       font-size: 2rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
+      color: var(--clr-text);
     }
 
-    .proj-inner p {
-      color: #444;
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
+    .proj-text p {
+      color: #555;
+      line-height: 1.6;
     }
 
+    /* pil knapper */
     .proj-controls {
       display: flex;
-      justify-content: flex-end;
       gap: 1rem;
-      margin-bottom: 2rem;
     }
 
     .proj-btn {
-      background: white;
-      border: 1px solid #ddd;
-      padding: 0.5rem;
+      width: 45px;
+      height: 45px;
+      border: none;
       border-radius: 50%;
       cursor: pointer;
-      transition:
-        background 0.3s,
-        transform 0.2s;
-    }
-
-    .proj-btn:hover {
-      background: #000;
-      color: white;
-      transform: scale(1.1);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .proj-btn img {
-      width: 20px;
-      height: 20px;
-      display: block;
+      width: 18px;
+      height: 18px;
+      filter: invert(1);
     }
 
+    .proj-btn.black {
+      background: #000;
+    }
+
+    .proj-btn.yellow {
+      background: var(--clr-accent);
+    }
+
+    .proj-btn:hover {
+      transform: scale(1.08);
+    }
+
+    /* kort */
     .proj-cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
       list-style: none;
       padding: 0;
     }
 
     .proj-card {
-      background: white;
-      border-radius: 0.8rem;
-      padding: 1.5rem;
+      background: var(--clr-card);
+      border-radius: var(--radius);
+      padding: 1rem;
+      width: 240px;
       text-align: left;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      box-shadow: 0 0 0 1px #e0e0e0;
+    }
+
+    .proj-card.active {
+      background: var(--clr-active);
+      color: #fff;
+      transform: translateY(-6px);
+    }
+
+    .proj-card.active .proj-icon {
+      background: var(--clr-accent);
+    }
+
+    .proj-icon {
+      background: #000;
+      width: 45px;
+      height: 45px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .proj-icon img {
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+    }
+
+    .proj-card p {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .proj-card.active p {
+      color: #ccc;
+    }
+
+    @media (max-width: 900px) {
+      .proj-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .proj-header {
+        align-items: center;
+      }
     }
   }
 </style>
