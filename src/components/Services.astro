@@ -20,19 +20,18 @@ console.log(servicesData);
   @layer components {
     .services-list {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr)); /* safe 1fr */
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
       z-index: 100;
       color: white;
       max-width: 900px;
-      margin: -110px auto 0 auto; /* overlap hero */
+      margin: -110px auto 0 auto;
       padding: 0 2rem;
       list-style: none;
-      align-items: stretch; /* sørg for ens korthøjde */
+      margin-bottom: -80px;
+      align-items: stretch;
     }
 
-    /* gør hvert kort til en lille grid med 3 rækker:
-   1) overskrift  2) tekst som fleksibel  3) knap i bunden */
     .services-list li {
       background-color: rgb(40, 40, 40);
       padding: 1.5rem;
@@ -41,9 +40,9 @@ console.log(servicesData);
       text-align: center;
       transition: transform 0.3s;
       min-width: 210px;
-
+      border: 1px solid grey;
       display: grid;
-      grid-template-rows: auto 1fr auto; /* 💡 magien */
+      grid-template-rows: auto 1fr auto;
       height: 100%;
     }
 
@@ -61,7 +60,6 @@ console.log(servicesData);
       margin: 0 0 1.5rem;
       font-size: 0.9rem;
       line-height: 1.4;
-      /* ingen fixed height – rækkerne håndterer det */
     }
 
     .services-list li a {
@@ -72,8 +70,8 @@ console.log(servicesData);
       border-radius: 0.5rem;
       font-weight: 500;
 
-      justify-self: center; /* centrer knappen horisontalt */
-      align-self: end; /* fasthold i bunden */
+      justify-self: center;
+      align-self: end;
     }
   }
 </style>

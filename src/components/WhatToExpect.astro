@@ -1,26 +1,36 @@
 ---
 import { Image } from "astro:assets";
 import TeamImage from "@assets/images/team-meeting.svg";
+import CheckIcon from "../icons/checkmark.svg";
 ---
 
 <section class="expect">
-  <div class="expect-grid">
-    <div class="expect-image">
-      <Image src={TeamImage} alt="Team collaboration" />
-    </div>
-    <div class="expect-text">
-      <h3>We'll work with you</h3>
-      <h2>What To Expect</h2>
-      <p>
-        Our collaboration is built on transparency, efficiency, and measurable
-        results. Together, we create strategies tailored to your needs and
-        goals.
-      </p>
-      <ul>
-        <li>✔️ Collaborative goals and scalable strategies</li>
-        <li>✔️ Data-driven decisions for measurable growth</li>
-        <li>✔️ Expert insights to achieve remarkable results</li>
-      </ul>
+  <div class="section-inner">
+    <div class="expect-grid">
+      <div class="expect-image">
+        <Image src={TeamImage} alt="Team collaboration" />
+      </div>
+      <div class="expect-text">
+        <h3>We'll work with you</h3>
+        <h2>What To Expect</h2>
+        <p>
+          Our collaboration is built on transparency, efficiency, and measurable
+          results. Together, we create strategies tailored to your needs and
+          goals.
+        </p>
+        <ul class="expect-list">
+          <li>
+            <span class="icon"><CheckIcon /></span>
+            Collaborate to build actionable strategies that drive sustainable growth
+            and deliver tangible outcomes.
+          </li>
+          <li>
+            <span class="icon"><CheckIcon /></span>
+            Identify opportunities to optimize processes and implement impactful
+            solutions with measurable results.
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -30,6 +40,8 @@ import TeamImage from "@assets/images/team-meeting.svg";
     .expect {
       background-color: #fff;
       padding: 8rem 2rem;
+      margin-top: 60px;
+      margin-bottom: -50px;
     }
 
     .expect-grid {
@@ -74,9 +86,19 @@ import TeamImage from "@assets/images/team-meeting.svg";
       gap: 0.5rem;
     }
 
-    .expect-text li {
-      color: #000;
-      font-weight: 500;
+    .expect-list {
+      display: flex;
+      align-items: center; /* ikon og tekst på samme linje */
     }
-  }
+    .expect-list .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #6fd87a;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      margin-right: 0.8rem;
+      flex-shrink: 0;
+    }
 </style>

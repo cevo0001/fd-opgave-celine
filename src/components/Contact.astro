@@ -10,58 +10,60 @@ import ImgBottom from "../assets/images/contactbottom.svg";
 ---
 
 <section class="contact">
-  <div class="contact-inner">
-    <!-- Venstre kolonne -->
-    <div class="contact-text">
-      <p class="contact-sub">Process</p>
-      <h2>Contact Us. It’s Easy.</h2>
-      <p class="contact-desc">
-        Leverage agile frameworks to provide a robust synopsis for high level
-        overviews. Iterative approaches to corporate strategy foster
-        collaborative.
-      </p>
+  <div class="section-inner">
+    <div class="contact-inner">
+      <!-- Venstre kolonne -->
+      <div class="contact-text">
+        <p class="contact-sub">Process</p>
+        <h2>Contact Us. It’s Easy.</h2>
+        <p class="contact-desc">
+          Leverage agile frameworks to provide a robust synopsis for high level
+          overviews. Iterative approaches to corporate strategy foster
+          collaborative.
+        </p>
 
-      <div class="contact-info">
-        <div class="info-item">
-          <div class="icon-circle yellow"><PhoneIcon /></div>
-          <div>
-            <p>Call Today</p>
-            <h4>+1 800 100 900</h4>
+        <div class="contact-info">
+          <div class="info-item">
+            <div class="icon-circle yellow"><PhoneIcon /></div>
+            <div>
+              <p>Call Today</p>
+              <h4>+1 800 100 900</h4>
+            </div>
           </div>
-        </div>
 
-        <div class="info-item">
-          <div class="icon-circle green"><ClockIcon /></div>
-          <div>
-            <p>Monday To Friday</p>
-            <h4>9AM – 5PM</h4>
+          <div class="info-item">
+            <div class="icon-circle green"><ClockIcon /></div>
+            <div>
+              <p>Monday To Friday</p>
+              <h4>9AM – 5PM</h4>
+            </div>
           </div>
-        </div>
 
-        <div class="info-item">
-          <div class="icon-circle gray"><LocationIcon /></div>
-          <div>
-            <p>USA Office</p>
-            <h4>195 Devonshire St Boston, MA 02110</h4>
+          <div class="info-item">
+            <div class="icon-circle gray"><LocationIcon /></div>
+            <div>
+              <p>USA Office</p>
+              <h4>195 Devonshire St Boston, MA 02110</h4>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Højre kolonne: billeder -->
-    <div class="contact-images">
-      <div class="img-main">
-        <div class="green-shape"></div>
-        <img src={ImgMain.src} alt="Main contact image" />
-      </div>
-
-      <div class="img-side">
-        <div class="img-top">
-          <img src={ImgTop.src} alt="Top contact image" />
-          <div class="dots"></div>
+      <!-- Højre kolonne: billeder -->
+      <div class="contact-images">
+        <div class="img-main">
+          <div class="green-shape"></div>
+          <img src={ImgMain.src} alt="Main contact image" />
         </div>
-        <div class="img-bottom">
-          <img src={ImgBottom.src} alt="Bottom contact image" />
+
+        <div class="img-side">
+          <div class="img-top">
+            <img src={ImgTop.src} alt="Top contact image" />
+            <div class="dots"></div>
+          </div>
+          <div class="img-bottom">
+            <img src={ImgBottom.src} alt="Bottom contact image" />
+          </div>
         </div>
       </div>
     </div>
@@ -210,7 +212,7 @@ import ImgBottom from "../assets/images/contactbottom.svg";
     /* prikmønster bag billede */
     .img-top img {
       position: relative;
-      z-index: 2; /* løfter billedet over prikkerne */
+      z-index: 2;
     }
     .dots {
       position: absolute;

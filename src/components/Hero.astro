@@ -6,6 +6,8 @@ import CEOImage from "@assets/images/ceo.png";
 
 <section class="hero">
   <div class="hero-grid">
+    <!-- ny kolonne kun til prikker -->
+    <div class="hero-dots"></div>
     <!-- Venstre halvdel -->
     <div class="hero-text">
       <h1>Empowering Your Business Growth</h1>
@@ -33,21 +35,30 @@ import CEOImage from "@assets/images/ceo.png";
   @layer components {
     .hero {
       width: 100%;
-      background-color: #000; /* sort baggrund som i designet */
+      background-color: #000;
       color: white;
       position: relative;
-      padding-bottom: 7rem; /* plads til overlap med services */
-      /* overflow: hidden; */
+      padding-bottom: 0rem;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      gap: 2rem;
+      width: 100%;
+      margin: 0;
+      padding: 0rem 0;
+    }
+
+    .hero-dots {
+      position: absolute;
+      width: 120px;
+      height: 200px;
+      background-image: radial-gradient(#b39446 1.5px, transparent 1.5px);
+      background-size: 15px 19px;
+      opacity: 0.5;
+      margin-left: 0rem;
+      margin-top: -130px;
     }
 
     .hero-text {
@@ -56,12 +67,16 @@ import CEOImage from "@assets/images/ceo.png";
       justify-content: center;
       gap: 1.5rem;
       z-index: 1;
+      margin-left: 11rem;
+      margin-top: -100px;
+      padding-right: 20px;
     }
 
     .hero-text h1 {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       font-weight: 700;
       line-height: 1.2;
+      margin-top: 10px;
     }
 
     .hero-text p {
@@ -75,7 +90,7 @@ import CEOImage from "@assets/images/ceo.png";
       background-color: #fff;
       color: #000;
       padding: 0.75rem 2rem;
-      border-radius: 0.5rem;
+      border-radius: 2rem;
       font-weight: 600;
       text-decoration: none;
       width: fit-content;
@@ -83,7 +98,7 @@ import CEOImage from "@assets/images/ceo.png";
     }
 
     .hero-btn:hover {
-      background-color: #e5e5e5;
+      background-color: #ffdd1b;
     }
 
     .hero-image {

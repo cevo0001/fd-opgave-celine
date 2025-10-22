@@ -5,18 +5,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* logo til venstre, login til højre */
-  padding: 1rem 2rem;
-  background-color: #000000; /* eller pink/lys farve hvis girly vibe */
+  padding: 1.3rem 12rem;
+  background-color: #242424; 
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header .logo h1 {
-  font-size: 1.5rem;
-  color: #ffffff; /* cute pink vibe <3 */
+  font-size: 1.4rem;
+  color: #ffffff; 
 }
 
 .header .menu a {
   margin: 0 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
@@ -28,11 +29,12 @@
 }
 
 .header .login button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
+  font-size: 0.7rem;
   background-color: #ffea4e;
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }

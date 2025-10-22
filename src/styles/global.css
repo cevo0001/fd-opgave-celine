@@ -1,0 +1,7 @@
+
+
+.section-inner {
+  max-width: 1200px;      /* sikrer, at indholdet aldrig bliver for bredt */
+  margin: 0 auto;         /* centrerer alt midt på siden */
+  padding-inline: 8rem;   /* giver luft i siderne på begge sider */
+}
