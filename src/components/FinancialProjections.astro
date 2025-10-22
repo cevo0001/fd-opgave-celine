@@ -1,0 +1,126 @@
+---
+import ArrowLeft from "../icons/arrow-left.svg";
+import ArrowRight from "../icons/arrow--right.svg";
+---
+
+<section class="projections">
+  <div class="proj-inner">
+    <h2>Financial Projections</h2>
+    <p>
+      Financial projections are essential for planning and monitoring a
+      company's performance. They provide insights into potential revenue,
+      expenses, and profitability over specific periods.
+    </p>
+
+    <div class="proj-controls">
+      <button class="proj-btn">
+        <img src={ArrowLeft.src} alt="Previous" />
+      </button>
+      <button class="proj-btn active">
+        <img src={ArrowRight.src} alt="Next" />
+      </button>
+    </div>
+
+    <ul class="proj-cards">
+      <li class="proj-card">
+        <h3>The Balance Sheet</h3>
+        <p>
+          The Balance Sheet is a summary of the assets and liabilities of a
+          business at a specific point in time.
+        </p>
+      </li>
+      <li class="proj-card active">
+        <h3>Income Statement</h3>
+        <p>
+          The Income Statement includes revenue, expenses, and net profit over a
+          specific period.
+        </p>
+      </li>
+      <li class="proj-card">
+        <h3>Financial Plan</h3>
+        <p>
+          Review long-term objectives and track progress for steady growth and
+          stability.
+        </p>
+      </li>
+      <li class="proj-card">
+        <h3>Financial Ratios</h3>
+        <p>
+          Analyze and evaluate your company’s performance and financial
+          efficiency.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .projections {
+      background-color: #f8f9fa;
+      padding: 6rem 2rem;
+    }
+
+    .proj-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .proj-inner h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .proj-inner p {
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .proj-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .proj-btn {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transition:
+        background 0.3s,
+        transform 0.2s;
+    }
+
+    .proj-btn:hover {
+      background: #000;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .proj-btn img {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    .proj-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .proj-card {
+      background: white;
+      border-radius: 0.8rem;
+      padding: 1.5rem;
+      text-align: left;
+    }
+  }
+</style>

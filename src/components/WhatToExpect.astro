@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import TeamImage from "@assets/images/team-meeting.svg";
+---
+
+<section class="expect">
+  <div class="expect-grid">
+    <div class="expect-image">
+      <Image src={TeamImage} alt="Team collaboration" />
+    </div>
+    <div class="expect-text">
+      <h3>We'll work with you</h3>
+      <h2>What To Expect</h2>
+      <p>
+        Our collaboration is built on transparency, efficiency, and measurable
+        results. Together, we create strategies tailored to your needs and
+        goals.
+      </p>
+      <ul>
+        <li>✔️ Collaborative goals and scalable strategies</li>
+        <li>✔️ Data-driven decisions for measurable growth</li>
+        <li>✔️ Expert insights to achieve remarkable results</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .expect {
+      background-color: #fff;
+      padding: 8rem 2rem;
+    }
+
+    .expect-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 3rem;
+    }
+
+    .expect-image img {
+      width: 100%;
+      border-radius: 1rem;
+    }
+
+    .expect-text h3 {
+      color: #888;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .expect-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .expect-text p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .expect-text ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .expect-text li {
+      color: #000;
+      font-weight: 500;
+    }
+  }
+</style>
