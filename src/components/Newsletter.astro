@@ -1,0 +1,180 @@
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <!-- Tekst -->
+    <div class="newsletter-text">
+      <h3>Subscribe Our Newsletter</h3>
+      <p>Build stronger Customer Relationships with <span>Consultalk</span></p>
+    </div>
+
+    <!-- Formular -->
+    <form class="newsletter-form">
+      <div class="form-top">
+        <input type="email" placeholder="your mail address" required />
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+
+    <!-- Pynt -->
+    <div class="dots"></div>
+    <div class="green-corner"></div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .newsletter {
+      background-color: transparent;
+      padding: 4rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .newsletter-inner {
+      background-color: #111;
+      color: #fff;
+      border-radius: 1rem;
+      max-width: 1100px;
+      width: 100%;
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Tekst */
+    .newsletter-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .newsletter-text p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .newsletter-text span {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* Formular */
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+      width: 380px;
+    }
+
+    .form-top {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border-radius: 0.4rem;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+      color: #000;
+      width: 100%;
+    }
+
+    .newsletter-form input::placeholder {
+      color: #999;
+    }
+
+    .newsletter-form textarea {
+      padding: 0.8rem 1rem;
+      border-radius: 0.4rem;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+      color: #000;
+      resize: none;
+    }
+
+    .newsletter-form textarea::placeholder {
+      color: #999;
+    }
+
+    .newsletter-form input:focus,
+    .newsletter-form textarea:focus {
+      outline: 2px solid #ffcc00;
+      background-color: #fffceb;
+    }
+
+    .newsletter-form button {
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      font-weight: 600;
+      border-radius: 2rem;
+      padding: 0.8rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      white-space: nowrap;
+    }
+
+    .newsletter-form button:hover {
+      background-color: #ffda3d;
+    }
+
+    /* Prikker */
+    .dots {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      width: 140px;
+      height: 140px;
+      background-image: radial-gradient(#b39446 1.5px, transparent 1.5px);
+      background-size: 12px 12px;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    /* Grøn hjørne */
+    .green-corner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 130px;
+      height: 90px;
+      background-color: #4caf50;
+      border-radius: 1rem 0 1rem 0;
+      z-index: 1;
+    }
+
+    @media (max-width: 900px) {
+      .newsletter-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2.5rem;
+      }
+
+      .newsletter-form {
+        width: 100%;
+      }
+
+      .form-top {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .dots {
+        top: auto;
+        bottom: 0;
+        right: 1rem;
+      }
+    }
+  }
+</style>
