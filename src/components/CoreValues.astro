@@ -1,0 +1,207 @@
+---
+import LayersIcon from "../icons/layers.svg";
+import BarsIcon from "@icons/bars.svg";
+import GlobeIcon from "@icons/globe.svg";
+import GearIcon from "@icons/gear.svg";
+---
+
+<section class="core-values">
+  <div class="cv-inner">
+    <div class="cv-top">
+      <div class="cv-text">
+        <p class="cv-sub">Growing with our clients</p>
+        <h2>Our core values & principles</h2>
+        <p class="cv-desc">
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+      </div>
+      <button class="cv-btn">Get in touch</button>
+    </div>
+
+    <div class="cv-grid">
+      <div class="cv-card">
+        <img src={LayersIcon.src} alt="Creative Ideas icon" />
+        <h3>Creative Ideas</h3>
+        <p>
+          Explore innovative strategies tailored to your goals. Unlock unique
+          solutions that inspire growth and creativity. Drive impactful change.
+        </p>
+        <a href="#">Read More </a>
+      </div>
+
+      <div class="cv-card">
+        <img src={BarsIcon.src} alt="Best Features icon" />
+        <h3>Best Features</h3>
+        <p>
+          Deliver advanced tools designed for seamless integration. Optimize
+          workflows with cutting-edge technology.
+        </p>
+        <a href="#">Read More </a>
+      </div>
+
+      <div class="cv-card">
+        <img src={GlobeIcon.src} alt="Experience icon" />
+        <h3>Experience</h3>
+        <p>
+          Leverage years of proven expertise across diverse industries. Empower
+          your business with our skilled professionals. Achieve sustainable
+          success.
+        </p>
+        <a href="#">Read More </a>
+      </div>
+
+      <div class="cv-card">
+        <img src={GearIcon.src} alt="Easy Solutions icon" />
+        <h3>Easy Solutions</h3>
+        <p>
+          Streamline your challenges with simple, effective solutions. Ensure
+          hassle-free implementation for measurable results.
+        </p>
+        <a href="#">Read More </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .core-values {
+      background-color: #111;
+      color: #fff;
+      padding: 6rem 2rem;
+    }
+
+    .cv-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* Header-tekst og knap */
+    .cv-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .cv-text {
+      max-width: 700px;
+    }
+
+    .cv-sub {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: #ffcc00;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-desc {
+      color: #ccc;
+      line-height: 1.6;
+      max-width: 90%;
+    }
+
+    .cv-btn {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.6rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .cv-btn:hover {
+      background: #ffcc00;
+    }
+
+    /* Grid setup med subgrid-look */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cv-card {
+      background: #fff;
+      color: #000;
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      align-items: start;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .cv-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .cv-card img {
+      border-radius: 50%;
+      padding: 0.6rem;
+      width: 40px;
+      height: 40px;
+    }
+
+    .cv-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    .cv-card p {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .cv-card a {
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .cv-card a::after {
+      content: "→";
+      transition: transform 0.2s ease;
+    }
+
+    .cv-card a:hover::after {
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 900px) {
+      .cv-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .cv-text {
+        max-width: 100%;
+      }
+      .cv-btn {
+        align-self: center;
+      }
+    }
+  }
+</style>
