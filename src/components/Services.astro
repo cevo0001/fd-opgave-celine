@@ -74,4 +74,59 @@ console.log(servicesData);
       align-self: end;
     }
   }
+
+  @media (max-width: 1200px) {
+    .services-list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 800px;
+    }
+
+    .services-list li {
+      padding: 1rem;
+    }
+
+    .services-list li h2 {
+      font-size: 1.2rem;
+    }
+
+    .services-list li p {
+      font-size: 0.9rem;
+    }
+
+    .services-list li a {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .services-list {
+      grid-template-columns: 1fr;
+
+      padding: 0 1rem;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    .services-list li {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .services-list li h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .services-list li p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .services-list li a {
+      font-size: 0.9rem;
+      padding: 0.5rem 1.2rem;
+    }
+  }
 </style>

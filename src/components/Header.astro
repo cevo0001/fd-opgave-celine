@@ -3,21 +3,26 @@ import "../styles/header.css";
 ---
 
 <header class="header">
-  <!-- Logo til venstre -->
+  <!-- Logo -->
   <div class="logo">
-    <h1>AskExperts</h1>
+    <a href="/"><h1>AskExperts</h1></a>
   </div>
 
-  <!-- Menu i midten -->
+  <!-- Burger toggle + Navigation samlet -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
   <nav class="menu">
     <a href="/">Forside</a>
     <a href="/about">Om os</a>
     <a href="/services">Services</a>
     <a href="/contact">Kontakt</a>
+    <button class="login-btn mobile">Login</button>
   </nav>
 
-  <!-- Login knap til højre -->
-  <div class="login">
-    <button>Login</button>
-  </div>
+  <button class="login-btn desktop">Login</button>
 </header>

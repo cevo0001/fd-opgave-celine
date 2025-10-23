@@ -1,45 +1,137 @@
-/* Globale styles her */
-
-/* HEADER */
+/* === HEADER === */
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo til venstre, login til højre */
-  padding: 1.3rem 12rem;
-  background-color: #242424; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  padding: 1.2rem 10rem;
+  background-color: #242424;
+  position: relative;
+  z-index: 100;
 }
 
-.header .logo h1 {
-  font-size: 1.4rem;
-  color: #ffffff; 
+/* Logo */
+.logo h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
-
-.header .menu a {
-  margin: 0 1rem;
-  font-size: 0.9rem;
+.logo a {
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: color 0.3s;
 }
 
-.header .menu a:hover {
+/* Navigation */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
   color: #ffec42;
 }
 
-.header .login button {
-  padding: 0.5rem 2rem;
-  font-size: 0.7rem;
+/* === Login buttons === */
+.login-btn {
   background-color: #ffea4e;
-  color: rgb(0, 0, 0);
+  color: #000;
   border: none;
   border-radius: 1.5rem;
+  padding: 0.6rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
-.header .login button:hover {
-  background-color: #565656;
-  color: rgb(0, 0, 0);
+.login-btn:hover {
+  background-color: #fff161;
+}
+
+/* hide mobile login by default */
+.login-btn.mobile {
+  display: none;
+}
+
+/* === Burger === */
+#menu-toggle {
+  display: none;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: #242424;
+    border-top: 1px solid #333;
+    padding: 2rem 0 3rem;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+  }
+
+  #menu-toggle:checked + .burger + .menu {
+    transform: translateY(0);
+  }
+
+  .menu a {
+    font-size: 1rem;
+  }
+
+  /* Hide desktop login */
+  .login-btn.desktop {
+    display: none;
+  }
+
+  /* Show mobile login */
+  .login-btn.mobile {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  /* Burger animation */
+  #menu-toggle:checked + .burger span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+  #menu-toggle:checked + .burger span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
 }
