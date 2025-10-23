@@ -35,12 +35,12 @@
 }
 
 .menu a:hover {
-  color: #ffec42;
+  color: var(--gul);
 }
 
 /* === Login buttons === */
 .login-btn {
-  background-color: #ffea4e;
+  background-color: var(--gul);
   color: #000;
   border: none;
   border-radius: 1.5rem;
@@ -52,7 +52,7 @@
 }
 
 .login-btn:hover {
-  background-color: #fff161;
+  background-color: var(--gul);
 }
 
 /* hide mobile login by default */
@@ -134,4 +134,86 @@
   #menu-toggle:checked + .burger span:nth-child(3) {
     transform: rotate(-45deg) translate(4px, -4px);
   }
+}
+
+/* === LOGIN POPUP === */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.login-overlay.active {
+  display: flex;
+}
+
+.login-popup {
+  background: #111;
+  color: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  width: min(90%, 400px);
+  text-align: left;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.login-popup h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.login-popup label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.login-popup input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--sort);
+}
+
+.login-popup input:focus-visible {
+  outline: 2px solid var(--gul);
+  background-color: var(--hvid);
+}
+
+.login-btn-popup {
+  width: 100%;
+  background: var(--gul);
+  border: none;
+  padding: 0.9rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--sort);
+  transition: background 0.3s ease;
+}
+
+.login-btn-popup:hover {
+  background: var(--gul);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color:var(--hvid);
+  font-size: 1.2rem;
+  cursor: pointer;
 }

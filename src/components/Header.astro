@@ -25,4 +25,40 @@ import "../styles/header.css";
   </nav>
 
   <button class="login-btn desktop">Login</button>
+
+  <!-- LOGIN POPUP -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-popup">
+      <button class="close-btn" id="closeLogin">✕</button>
+      <h2>Dashboard Login</h2>
+      <form>
+        <label>Email address</label>
+        <input type="email" placeholder="you@example.com" required />
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" required />
+        <button type="submit" class="login-btn-popup">Go to dashboard</button>
+      </form>
+    </div>
+  </div>
 </header>
+
+<script>
+  document.addEventListener("click", (event) => {
+    const overlay = document.getElementById("loginOverlay");
+    if (!overlay) return;
+
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    // Open popup
+    if (target.closest(".login-btn")) {
+      event.preventDefault();
+      overlay.classList.add("active");
+    }
+
+    // Close popup
+    if (target.closest("#closeLogin") || target === overlay) {
+      overlay.classList.remove("active");
+    }
+  });
+</script>

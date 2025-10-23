@@ -38,7 +38,7 @@ import CheckIcon from "../icons/checkmark.svg";
 <style>
   @layer components {
     .expect {
-      background-color: #fff;
+      background-color: var(--hvid);
       padding: 8rem 2rem;
       margin-top: 60px;
       margin-bottom: -50px;
@@ -94,92 +94,91 @@ import CheckIcon from "../icons/checkmark.svg";
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background-color: #6fd87a;
+      background-color: var(--grøn);
       border-radius: 50%;
       width: 24px;
       height: 24px;
       margin-right: 0.8rem;
       flex-shrink: 0;
     }
-
-    /* MOBIL SITE STYLE */
-@media (max-width: 900px) {
-  .expect {
-    padding: 2rem 1rem;
-    margin-top: 20px;
-    margin-bottom: 0;
   }
 
-  .expect-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+  /* MOBIL SITE STYLE */
+  @media (max-width: 900px) {
+    .expect {
+      padding: 2rem 1rem;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    .expect-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .expect-image {
+      order: -1; /* billede øverst */
+    }
+
+    .expect-image img {
+      width: 60%;
+      max-width: 380px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 1rem;
+    }
+
+    .expect-text {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .expect-text h2 {
+      font-size: 1.8rem;
+    }
+
+    .expect-text p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .expect-text h3 {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .expect-list li {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+    .expect-list .icon {
+      width: 22px;
+      height: 22px;
+      background-color: var(--grøn);
+      flex-shrink: 0;
+    }
   }
 
-  .expect-image {
-    order: -1; /* billede øverst */
-  }
+  @media (max-width: 600px) {
+    .expect-text h2 {
+      font-size: 1.6rem;
+    }
 
-  .expect-image img {
-    width: 60%;
-    max-width: 380px;
-    margin: 0 auto;
-    display: block;
-    border-radius: 1rem;
-  }
+    .expect-text p {
+      font-size: 0.9rem;
+    }
 
-  .expect-text {
-    max-width: 80%;
-    margin: 0 auto;
+    .expect-image img {
+      max-width: 320px;
+    }
   }
-
-  .expect-text h2 {
-    font-size: 1.8rem;
-  }
-
-  .expect-text p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .expect-text h3 {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-  }
-
-  .expect-list li {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    gap: 1.8rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0 auto;
-    max-width: 400px;
-  }
-
-  .expect-list .icon {
-    width: 22px;
-    height: 22px;
-    background-color: #6fd87a;
-    flex-shrink: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .expect-text h2 {
-    font-size: 1.6rem;
-  }
-
-  .expect-text p {
-    font-size: 0.9rem;
-   
-  }
-
-  .expect-image img {
-    max-width: 320px;
-  }
-}
-
 </style>

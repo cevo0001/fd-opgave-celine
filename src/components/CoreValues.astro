@@ -73,8 +73,8 @@ import GearIcon from "../icons/gear.svg";
 <style>
   @layer components {
     .core-values {
-      background-color: #111;
-      color: #fff;
+      background-color: var(--sort);
+      color: var(--hvid);
       padding: 6rem 2rem;
     }
 
@@ -102,7 +102,7 @@ import GearIcon from "../icons/gear.svg";
     .cv-sub {
       text-transform: uppercase;
       font-size: 0.9rem;
-      color: #ffcc00;
+      color: var(--gul);
       letter-spacing: 1px;
       margin-bottom: 0.5rem;
     }
@@ -114,14 +114,14 @@ import GearIcon from "../icons/gear.svg";
     }
 
     .cv-desc {
-      color: #ccc;
+      color: var(--grå);
       line-height: 1.6;
       max-width: 90%;
     }
 
     .cv-btn {
-      background: #fff;
-      color: #000;
+      background: var(--hvid);
+      color: var(--sort);
       border: none;
       padding: 0.7rem 1.6rem;
       border-radius: 9999px;
@@ -131,7 +131,7 @@ import GearIcon from "../icons/gear.svg";
     }
 
     .cv-btn:hover {
-      background: #ffcc00;
+      background: var(--gul);
     }
 
     /* Grid med kort */
@@ -142,8 +142,8 @@ import GearIcon from "../icons/gear.svg";
     }
 
     .cv-card {
-      background: #fff;
-      color: #000;
+      background: var(--hvid);
+      color: var(--sort);
       border-radius: 16px;
       padding: 1rem 1.2rem;
       display: grid;
@@ -169,7 +169,7 @@ import GearIcon from "../icons/gear.svg";
     }
 
     .cv-icon {
-      background-color: #fff;
+      background-color: var(--hvid);
       border-radius: 50%;
       padding: 0.6rem;
       width: 40px;
@@ -177,7 +177,7 @@ import GearIcon from "../icons/gear.svg";
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 0 2px #000; /* sort ring rundt om */
+      box-shadow: 0 0 0 2px var(--sort); /* sort ring rundt om */
     }
 
     .cv-icon svg {
@@ -201,7 +201,7 @@ import GearIcon from "../icons/gear.svg";
 
     .cv-card a {
       font-weight: 600;
-      color: #000;
+      color: var(--sort);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
